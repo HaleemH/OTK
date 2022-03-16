@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {Link} from "react-router-dom"
 import {Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from "reactstrap";
 
 
@@ -11,7 +10,7 @@ console.log("refreshed")
   return (
     <div>
       <Navbar color="faded" light className="mainNav">
-        <NavbarBrand className="me-auto" href="/">
+        <NavbarBrand className="me-auto" href="/Main">
           Plugged N
         </NavbarBrand>
         <div className="nav__username">UserName</div>
@@ -20,7 +19,7 @@ console.log("refreshed")
           {navShow ? (
             <Nav navbar>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <NavLink href="/Main">Home</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/Login">Profile</NavLink>
