@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 2022_03_16_185630) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
     t.string "email"
-    t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2022_03_16_185630) do
     t.string "address"
     t.string "website"
     t.string "social"
-    t.text "menu" 
+    t.text "menu"
     t.text "services"
     t.string "phone"
     t.integer "rating"

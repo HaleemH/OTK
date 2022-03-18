@@ -43,7 +43,8 @@ function LoginCard({setUser}) {
       last_name: lastName,
       username,
       email,
-      password_digest: password,
+      password,
+      password_confirmation: password,
     }
     fetch("/users", {
       method: "POST",

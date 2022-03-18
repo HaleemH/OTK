@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :users
   resources :comments, only: [:index,:show,:create,:destroy]
   resources :tasks
   resources :vendors
-  resources :users
+
 
   # user Login
   post "/login", to: "sessions#create"

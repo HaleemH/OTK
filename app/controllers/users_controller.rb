@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: %i[show update destroy]
+  wrap_parameters format: []
+  rescue_from ActiveRecord::RecordInvalid, with: :invalid_params
 
   # GET /users
   def index
@@ -15,13 +17,13 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    user = User.create!(user_params)
+    render json: user, status: :created
 
-    if @user.save
-      render json: @user, status: :created, location: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
+    #   render json: @user, status: :created, location: @user
+    # else
+    #   render json: @user.errors, status: :unprocessable_entity
+    # end
   end
 
   # PATCH/PUT /users/1
@@ -39,13 +41,29 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:username, :email, :password_digest, :first_name, :last_name)
-    end
+  #errors
+  def invalid_params(invalid)
+    render json: {
+             errors: invalid.record.errors.full_messages,
+           },
+           status: :unprocessable_entity
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.permit(
+      :email,
+      :first_name,
+      :last_name,
+      :username,
+      :password,
+      :password_confirmation,
+    )
+  end
 end
