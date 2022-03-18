@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 //Pages
 import Home from "./pages/Home";
@@ -10,10 +10,18 @@ import CompanyPage from "./pages/CompanyPage";
 import MainNavBar from "./components/MainNavBar";
 function App() {
   const [user, setUser] = useState();
-  const [vendor, setVendor] = useState();
+  const [vendors, setVendors] = useState({});
+  // const [vendor, setVendor] = useState();
   const [vendorPage, setVendorPage] = useState();
-
-  console.log(vendorPage);
+ useEffect(() => {
+   fetch("/vendors")
+     .then((r) => r.json())
+     .then((res) => {
+       console.log(res);
+       setVendors(res);
+     });
+ },[]);
+ 
   return (
     <div className="App">
       <BrowserRouter>
@@ -24,7 +32,7 @@ function App() {
               <Route path="/Login" element={<Login  setUser={setUser}/>} />
               <Route
                 path="/Main"
-                element={<Main setVendorPage={setVendorPage} vendorPage={vendorPage} user={user}/>}
+                element={<Main vendors={vendors} user={user}/>}
               />
               <Route path={`/MoreInfo/${vendorPage}`} element={<CompanyPage />} />
               <Route path="/" element={<Home />} />

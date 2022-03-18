@@ -1,20 +1,15 @@
 import React from "react";
-import MainCard from "../components/MainCard";
+import MainCardList from "../components/MainCardList";
 import { Container } from "reactstrap";
 
-function Main({setVendorPage, vendorPage, user}) {
-  
+function Main({vendors}) {
   return (
     <Container className="main__container">
       <div className="hero__content">
-        <h3>
-          Find local small businesses
-
-          with one search
-        </h3>
+        <h3>Find local small businesses with one search</h3>
       </div>
       <Container className="main__hero"></Container>
-      <MainCard setVendorPage={setVendorPage} vendorPage={vendorPage} user={user}/>
+      <MainCardList  vendors={vendors}/>
     </Container>
   );
 }
