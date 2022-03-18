@@ -1,9 +1,9 @@
 import React from 'react'
 import LoginCard from "../components/LoginCard"
 
-function Login() {
+function Login({setUser}) {
   return (
-    <LoginCard />
+    <LoginCard setUser={setUser} />
   )
 }
 

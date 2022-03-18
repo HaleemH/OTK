@@ -18,13 +18,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div className="App">
-          <MainNavBar />
+          <MainNavBar user={user}/>
           <div>
             <Routes>
-              <Route path="/Login" element={<Login />} />
+              <Route path="/Login" element={<Login  setUser={setUser}/>} />
               <Route
                 path="/Main"
-                element={<Main setVendorPage={setVendorPage} vendorPage={vendorPage}/>}
+                element={<Main setVendorPage={setVendorPage} vendorPage={vendorPage} user={user}/>}
               />
               <Route path={`/MoreInfo/${vendorPage}`} element={<CompanyPage />} />
               <Route path="/" element={<Home />} />

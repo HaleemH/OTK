@@ -128,3 +128,20 @@
   margin-top: 10px;
   margin-left: 2px;
 }
+
+.form__signup{
+  padding:  20px 40px;
+  justify-content: center;
+  align-items: center;
+  max-width: 40vh;
+  min-height: 30vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background-color: hsla(0, 0%, 100%, 0.776);
+  border-radius: 3%;
+
+}
+
+.form__signup h3{
+  padding-bottom: 1rem;
+}

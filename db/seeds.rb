@@ -39,6 +39,15 @@ Vendor.create(
   phone: '1234567890',
   rating: 0,
 )
+Vendor.create(
+  name: 'test business',
+  address: '2223 Crenshaw BLVD, 90250 CA',
+  website: 'test.dev',
+  menu: '',
+  services: 'land scaping',
+  phone: '1234567890',
+  rating: 0,
+)
 
 # Comments
 

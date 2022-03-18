@@ -1,28 +1,38 @@
-import React, {useState} from 'react'
-import {Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink } from "reactstrap";
+import react from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  Collapse,
+  Nav,
+  NavItem,
+} from "reactstrap";
 
+function MainNavBar({ user }) {
+  const [navShow, setNavShow] = useState(false);
 
-
-
-function MainNavBar() {
-const[navShow, setNavShow] =useState(false)
-console.log("refreshed")
   return (
     <div>
       <Navbar color="faded" light className="mainNav">
         <NavbarBrand className="me-auto" href="/Main">
           Plugged N
         </NavbarBrand>
-        <div className="nav__username">UserName</div>
+        {user ? (
+          <div className="nav__username">{user.username}</div>
+        ) : (
+          <div className="nav__username"></div>
+        )}
         <NavbarToggler className="me-2" onClick={() => setNavShow(!navShow)} />
         <Collapse isOpen navbar>
           {navShow ? (
             <Nav navbar>
               <NavItem>
-                <NavLink href="/Main">Home</NavLink>
+                <Link to="/Main">Home</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="/Login">Profile</NavLink>
+                <Link to="/Login">Profile</Link>
               </NavItem>
             </Nav>
           ) : null}
@@ -32,4 +42,4 @@ console.log("refreshed")
   );
 }
 
-export default MainNavBar
+export default MainNavBar;

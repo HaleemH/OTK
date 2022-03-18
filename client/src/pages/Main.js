@@ -2,7 +2,7 @@ import React from "react";
 import MainCard from "../components/MainCard";
 import { Container } from "reactstrap";
 
-function Main({setVendorPage, vendorPage}) {
+function Main({setVendorPage, vendorPage, user}) {
   
   return (
     <Container className="main__container">
@@ -14,7 +14,7 @@ function Main({setVendorPage, vendorPage}) {
         </h3>
       </div>
       <Container className="main__hero"></Container>
-      <MainCard setVendorPage={setVendorPage} vendorPage={vendorPage}/>
+      <MainCard setVendorPage={setVendorPage} vendorPage={vendorPage} user={user}/>
     </Container>
   );
 }
