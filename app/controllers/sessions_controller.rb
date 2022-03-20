@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+rescue_from ActiveRecord::RecordInvalid, with: :invalid_params
 
 
   def create
@@ -6,9 +7,6 @@ class SessionsController < ApplicationController
     user&.authenticate(params[:password])
       session[:user_id] = user.id
       render json: user, status: :created
-    else
-      render json: { error: 'Invalid Username or Password' }, status: :forbidden
-    end
   end
 
   def destroy
@@ -17,5 +15,13 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     head :no_content
   end
+  private
+  def invalid_params(invalid)
+    render json: {
+             errors: invalid.record.errors.full_messages,
+           },
+           status: :unprocessable_entity
+  end
+
 
 end

@@ -1,4 +1,3 @@
-import react from "react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -30,6 +29,9 @@ function MainNavBar({ user }) {
             <Nav navbar>
               <NavItem>
                 <Link to="/Main">Home</Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/TaskBoard">Task Board</Link>
               </NavItem>
               <NavItem>
                 <Link to="/Login">Profile</Link>
