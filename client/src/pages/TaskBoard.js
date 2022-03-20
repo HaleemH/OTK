@@ -1,16 +1,23 @@
 import React,{ useEffect, useState} from 'react'
 import { Container, ListGroup, ListGroupItem} from "reactstrap"
+import NewTask from '../components/NewTask'
 
 
 
-function TaskBoard() {
+function TaskBoard({ user}) {
+    const[taskList, setTaskList] = useState([])
+    useEffect(() => {
+        fetch('/tasks')
+        .then(r => r.json())
+        .then(res => setTaskList(res))
+    },[])
+    console.log(taskList)
   return (
     <Container>
       TaskBoard
+      <NewTask user={user}/>
       <ListGroup className="Task__list">
-        <ListGroupItem>username: First Tast</ListGroupItem>
-        <ListGroupItem>username: Second Tast</ListGroupItem>
-        <ListGroupItem>username: Third Tast</ListGroupItem>
+        <ListGroupItem>username: {taskList.user_id}</ListGroupItem>
       </ListGroup>
     </Container>
   );

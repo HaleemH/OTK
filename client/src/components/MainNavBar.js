@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Navbar,
@@ -7,10 +7,16 @@ import {
   Collapse,
   Nav,
   NavItem,
+  Button,
 } from "reactstrap";
 
-function MainNavBar({ user }) {
+function MainNavBar({ user, setUser }) {
   const [navShow, setNavShow] = useState(false);
+  function handleLogout(e) {
+    fetch("/logout", {
+      method: "DELETE",
+    }).then(setUser(""));
+  }
 
   return (
     <div>
@@ -27,15 +33,26 @@ function MainNavBar({ user }) {
         <Collapse isOpen navbar>
           {navShow ? (
             <Nav navbar>
-              <NavItem>
+              <NavItem onClick={() => setNavShow(!navShow)}>
                 <Link to="/Main">Home</Link>
               </NavItem>
-              <NavItem>
+              <NavItem onClick={() => setNavShow(!navShow)}>
                 <Link to="/TaskBoard">Task Board</Link>
               </NavItem>
-              <NavItem>
-                <Link to="/Login">Profile</Link>
-              </NavItem>
+              {user ? (
+                <NavItem onClick={() => setNavShow(!navShow)}>
+                  <Link to="/Profile">Profile</Link>
+                </NavItem>
+              ) : (
+                <NavItem onClick={() => setNavShow(!navShow)}>
+                  <Link to="/Login">Login</Link>
+                </NavItem>
+              )}
+              {user ? (
+                <NavItem onClick={() => setNavShow(!navShow)}>
+                  <Button onClick={handleLogout}>Log Out</Button>
+                </NavItem>
+              ) : null}
             </Nav>
           ) : null}
         </Collapse>

@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import officepic from "../assets/officepic.jpg";
 
-function MainCard({ id, name, address, rating, img, setVendorPage }) {
+function MainCard({ id, name, address, rating, img, setVendorId }) {
   return (
     <Card color="light" className="card__container">
       <CardBody>
@@ -22,7 +22,7 @@ function MainCard({ id, name, address, rating, img, setVendorPage }) {
           Rating: {rating}
         </CardText>
         <Link to={`/MoreInfo/${id}`}>
-          <Button onClick={() => setVendorPage(id)}>Check Out</Button>
+          <Button onClick={() => setVendorId(id)}>Check Out</Button>
         </Link>
       </CardBody>
     </Card>

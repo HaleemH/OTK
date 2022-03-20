@@ -167,3 +167,17 @@
   align-items: center;
   width: 60vh;
 }
+
+.new__task__container{
+  background-color: rgba(141, 158, 174, 0.536);
+  width: 60vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.task__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

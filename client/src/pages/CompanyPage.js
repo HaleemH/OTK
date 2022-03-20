@@ -1,9 +1,9 @@
 import React,{ useEffect, useState } from 'react'
 
-function CompanyPage({vendorPage}) {
+function CompanyPage({vendorId}) {
   const [vendor, setVendor] = useState({})
   useEffect(() => {
-    fetch(`/vendors/${vendorPage}`)
+    fetch(`/vendors/${vendorId}`)
     .then(r => r.json())
     .then(res => {
       if(res.name){

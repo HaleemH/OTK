@@ -1,6 +1,6 @@
 import React from "react";
 import MainCard from "./MainCard";
-function MainCardList({ vendors, setVendorPage }) {
+function MainCardList({ vendors, setVendorId }) {
   return (
     <div>
       {vendors.map((vendor) => {
@@ -18,9 +18,8 @@ function MainCardList({ vendors, setVendorPage }) {
               rating={vendor.rating}
               img={vendor.img}
               website={vendor.website}
-              setVendorPage={setVendorPage}
+              setVendorId={setVendorId}
             />
-            <h3>{vendor.name}</h3>
           </>
         );
       })}

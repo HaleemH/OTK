@@ -1,10 +1,17 @@
 import React from 'react'
 import LoginCard from "../components/LoginCard"
+import {Navigate} from "react-router-dom"
 
-function Login({setUser}) {
+function Login({user, setUser}) {
   
   return (
-    <LoginCard setUser={setUser} />
+    <div>
+    {user ? (
+      <Navigate to="/Main" />
+    ):(
+    <LoginCard setUser={setUser} />)
+    }
+    </div>
   )
 }
 
