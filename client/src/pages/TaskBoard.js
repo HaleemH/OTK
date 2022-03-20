@@ -13,13 +13,16 @@ function TaskBoard({ user}) {
     },[])
     console.log(taskList)
   return (
-    <Container>
-      TaskBoard
-      <NewTask user={user}/>
-      <ListGroup className="Task__list">
-        <ListGroupItem>username: {taskList.user_id}</ListGroupItem>
-      </ListGroup>
-    </Container>
+    <>
+      <div className="task__hero"></div>
+      <Container>
+        <h3>Hello {user.first_name}, need a specific job completed?</h3>
+        <NewTask user={user} />
+        <ListGroup className="Task__list">
+          <ListGroupItem>username: {taskList.user_id}</ListGroupItem>
+        </ListGroup>
+      </Container>
+    </>
   );
 }
 

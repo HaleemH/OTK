@@ -29,7 +29,15 @@ User.create(
 )
 
 # Vendors
-
+Vendor.create(
+  name: 'Open Task',
+  address: '',
+  website: '',
+  menu: '',
+  services: '',
+  phone: '',
+  rating: 0,
+)
 Vendor.create(
   name: 'Prolific Tech',
   address: '123 Crenshaw BLVD, 90250 CA',
