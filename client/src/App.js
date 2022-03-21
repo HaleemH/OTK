@@ -42,7 +42,7 @@ function App() {
                 element={<Main user={user} setVendorId={setVendorId} />}
               />
               <Route
-                path={`/MoreInfo/${vendorId}`}
+                path={`/MoreInfo/${vendorId}`} 
                 element={<CompanyPage vendorId={vendorId} />}
               />
               <Route path="/" element={<Home />} />

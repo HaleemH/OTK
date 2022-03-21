@@ -1,6 +1,7 @@
 import React,{ useEffect, useState} from 'react'
 import { Container, ListGroup, ListGroupItem} from "reactstrap"
 import NewTask from '../components/NewTask'
+import TaskList from '../components/TaskList'
 
 
 
@@ -15,13 +16,26 @@ function TaskBoard({ user}) {
   return (
     <>
       <div className="task__hero"></div>
-      <Container>
-        <h3>Hello {user.first_name}, need a specific job completed?</h3>
-        <NewTask user={user} />
-        <ListGroup className="Task__list">
-          <ListGroupItem>username: {taskList.user_id}</ListGroupItem>
-        </ListGroup>
-      </Container>
+      {user ? (
+        <>
+          <Container>
+            <h3>Hello {user.first_name}, need a specific job completed?</h3>
+            <NewTask user={user} />
+            {taskList.map((task) => (
+              <TaskList
+                key={task.id}
+                desc={task.description}
+                due={task.due_by}
+                city={task.city}
+                user={task.user}
+                currentUser={user}
+              />
+            ))}
+          </Container>
+        </>
+      ) : (
+        <h2>🛑 Must be logged in to view Task section 🛑</h2>
+      )}
     </>
   );
 }
