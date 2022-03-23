@@ -1,5 +1,5 @@
 import React,{ useEffect, useState} from 'react'
-import { Container, ListGroup, ListGroupItem} from "reactstrap"
+import { Container } from "reactstrap"
 import NewTask from '../components/NewTask'
 import TaskList from '../components/TaskList'
 
@@ -13,7 +13,6 @@ function TaskBoard({ user}) {
         .then(r => r.json())
         .then(res => setTaskList(res))
     },[refreshList])
-    console.log(taskList)
   return (
     <>
       <div className="task__hero"></div>

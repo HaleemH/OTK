@@ -12,7 +12,7 @@ import officepic from "../assets/officepic.jpg";
 
 function MainCard({ id, name, address, rating, img, setVendorId }) {
   return (
-    <Card color="light" className="card__container">
+    <Card color="light" className="vendor__card" >
       <CardBody>
         <CardTitle tag="h5">{name}</CardTitle>
         <CardImg alt="city pic" src={img ? img : officepic} width="100%" />

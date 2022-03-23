@@ -4,7 +4,6 @@ import {
   FormGroup,
   Label,
   Input,
-  Row,
   Button,
   Col,
   Container,
@@ -44,7 +43,7 @@ function NewTask({user, setRefreshList}) {
     setCity("")
     
   }
-console.log(user)
+
   return (
     <Container className="new__task__container">
       <Form className="task__form">

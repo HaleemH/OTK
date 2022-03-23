@@ -95,11 +95,16 @@
   -ms-animation: fadeIn linear 7s;
 }
 /* Main Card  */
+.vendor__card{
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .card__container {
   width: 40vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 30vh;
+  
   text-align: center;
-  margin: 40px 10px;
+  margin: 40px;
   display: flex;
 }
 /* Main page */
@@ -108,6 +113,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .main__cards {
   min-width: 100%;

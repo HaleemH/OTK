@@ -2,7 +2,7 @@ import React from "react";
 import MainCard from "./MainCard";
 function MainCardList({ vendors, setVendorId }) {
   return (
-    <div>
+    <div className="card__container">
       {vendors.map((vendor) => {
         return (
           <>

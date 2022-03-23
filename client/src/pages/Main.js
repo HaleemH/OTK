@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MainCardList from "../components/MainCardList";
-import { Container, Input } from "reactstrap";
+import { Container} from "reactstrap";
 
 function Main({ setVendorId }) {
   const [vendors, setVendors] = useState([]);
@@ -13,11 +13,8 @@ function Main({ setVendorId }) {
 
   return (
     <>
-      <div className="main__hero">
-        {/* <Input className=""bsSize="sm" type="search" /> */}
-      </div>
+      <div className="main__hero"></div>
       <Container className="main__container">
-        <h3></h3>
         <MainCardList vendors={vendors} setVendorId={setVendorId} />
       </Container>
     </>

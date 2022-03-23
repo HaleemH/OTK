@@ -82,7 +82,6 @@ function TaskList({ desc, due, user, id, city, currentUser,setRefreshList }) {
     setRefreshList(Date.now());
   }
 
-  console.log(Date.now())
   return (
     <div className="task__container">
       {/* Edit post */}

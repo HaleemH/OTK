@@ -18,7 +18,7 @@ function Profile({ user }) {
      setTask(res)
     })
   },[])
-
+console.log(task)
   return (
     <>
       <div className="profile__hero"></div>
@@ -36,7 +36,9 @@ function Profile({ user }) {
           </CardBody>
         </Card>
         <h3>Open Task:</h3>
-        {task.map((t) => <ProfileTask  key={t.id} task={t} />)}
+        {task.map((t) => (
+          <ProfileTask key={t.id} task={t} />
+        ))}
       </Container>
     </>
   );
