@@ -32,7 +32,7 @@ function App() {
           <div>
             <Routes>
               <Route path="/TaskBoard" element={<TaskBoard user={user}/>} />
-              <Route path="/Profile" element={<Profile setUser={setUser} />} />
+              <Route path="/Profile" element={<Profile user={user} />} />
               <Route
                 path="/Login"
                 element={<Login setUser={setUser} user={user} />}

@@ -1,32 +1,42 @@
-import React,{ useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
-function CompanyPage({vendorId}) {
-  const [vendor, setVendor] = useState({})
+function CompanyPage({ vendorId }) {
+  const [vendor, setVendor] = useState({});
   useEffect(() => {
     fetch(`/vendors/${vendorId}`)
-    .then(r => r.json())
-    .then(res => {
-      if(res.name){
-        setVendor(res)
-      }else {
-        alert(res.errors)
-      }
-    })
-  },[])
-
+      .then((r) => r.json())
+      .then((res) => {
+        if (res.name) {
+          setVendor(res);
+        } else {
+          alert(res.errors);
+        }
+      });
+  }, []);
+console.log(vendor.email)
   return (
-    <div>
-      <h2>{vendor.name}</h2>
-      Address: {vendor.address}
-      Website: {vendor.website}
-      Social: {vendor.social}
-      Menu: {vendor.menu}
-      Services: {vendor.services}
-      Phone: {vendor.phone}
-      {vendor.img}
-      Rating: {vendor.rating}
-    </div>
-  )
+    <>
+      <div className="company__hero"></div>
+      <div>
+        <h2>{vendor.name}</h2>
+        {vendor.img}
+        <br />
+        Address: {vendor.address}
+        <br />
+        Website: {vendor.website}
+        <br />
+        Social: {vendor.social}
+        <br />
+        Menu: {vendor.menu}
+        <br />
+        Services: {vendor.services}
+        <br />
+        Phone: {vendor.phone}
+        <br />
+        Rating: {vendor.rating}
+      </div>
+    </>
+  );
 }
 
-export default CompanyPage
+export default CompanyPage;

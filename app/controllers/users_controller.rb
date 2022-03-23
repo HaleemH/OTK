@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show update destroy]
+  # before_action :set_user, only: %i[show update destroy]
   wrap_parameters format: []
   rescue_from ActiveRecord::RecordInvalid, with: :invalid_params
 
@@ -19,11 +19,6 @@ class UsersController < ApplicationController
   def create
     user = User.create!(user_params)
     render json: user, status: :created
-
-    #   render json: @user, status: :created, location: @user
-    # else
-    #   render json: @user.errors, status: :unprocessable_entity
-    # end
   end
 
   # PATCH/PUT /users/1
@@ -38,6 +33,11 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
+  end
+
+  def profile
+    user=User.find(params[:id])
+    render json: user, serialier: UserWithTaskAndCommentSerializer, status: :ok
   end
 
   private

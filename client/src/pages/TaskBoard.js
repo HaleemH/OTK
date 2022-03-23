@@ -7,20 +7,20 @@ import TaskList from '../components/TaskList'
 
 function TaskBoard({ user}) {
     const[taskList, setTaskList] = useState([])
+    const[refreshList, setRefreshList] = useState("")
     useEffect(() => {
         fetch('/tasks')
         .then(r => r.json())
         .then(res => setTaskList(res))
-    },[])
+    },[refreshList])
     console.log(taskList)
   return (
     <>
       <div className="task__hero"></div>
       {user ? (
-        <>
           <Container>
             <h3>Hello {user.first_name}, need a specific job completed?</h3>
-            <NewTask user={user} />
+            <NewTask user={user} setRefreshList={setRefreshList}/>
             {taskList.map((task) => (
               <TaskList
                 key={task.id}
@@ -29,10 +29,11 @@ function TaskBoard({ user}) {
                 city={task.city}
                 user={task.user}
                 currentUser={user}
+                id={task.id}
+                setRefreshList={setRefreshList}
               />
             ))}
           </Container>
-        </>
       ) : (
         <h2>🛑 Must be logged in to view Task section 🛑</h2>
       )}

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :task_comments
   resources :users
   resources :comments, only: [:index,:show,:create,:destroy]
   resources :tasks
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
 
   # user Login
   post "/login", to: "sessions#create"
+  get "/profile/:id", to: "tasks#profile"
 
 
   # Routing logic: fallback requests for React Router.

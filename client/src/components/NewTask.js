@@ -10,7 +10,7 @@ import {
   Container,
 } from "reactstrap";
 
-function NewTask({user}) {
+function NewTask({user, setRefreshList}) {
   const [job, setJob] = useState("");
   const [date, setDate] = useState("");
   const [city, setCity] = useState("");
@@ -35,9 +35,16 @@ function NewTask({user}) {
         if (!res.description) {
           alert(res.errors);
         }
-      });
+      }).then(refresh());
   }
-
+  function refresh(){
+    setRefreshList(user.id);
+    setJob("")
+    setDate("")
+    setCity("")
+    
+  }
+console.log(user)
   return (
     <Container className="new__task__container">
       <Form className="task__form">
@@ -46,6 +53,7 @@ function NewTask({user}) {
             <Label for="Desc">Job</Label>
             <Input
               onChange={(e) => setJob(e.target.value)}
+              value={job}
               id="Desc"
               name="Desc"
               type="textarea"
@@ -58,6 +66,7 @@ function NewTask({user}) {
             <Input
               onChange={(e) => setDate(e.target.value)}
               id="Date"
+              value={date}
               name="Date"
               type="date"
             />
@@ -68,6 +77,7 @@ function NewTask({user}) {
             <Label for="exampleCity">City</Label>
             <Input
               onChange={(e) => setCity(e.target.value)}
+              value={city}
               id="exampleCity"
               name="city"
             />
