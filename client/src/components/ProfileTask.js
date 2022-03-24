@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from "react";
 import {Container, Card, CardBody} from "reactstrap"
+import Message from '../components/Message'
 
 function ProfileTask({task}) {
     const [comment, setComment] = useState([])
@@ -11,8 +12,9 @@ function ProfileTask({task}) {
     useEffect(() => {
         fetch(`/task_comments/${task.id}`)
         .then(r => r.json())
-        .then(res => setComment())
+        .then(res => setComment(res))
     },[])
+    console.log(comment)
      return (
        <Container>
          <Card>
@@ -24,7 +26,8 @@ function ProfileTask({task}) {
              City: {task.city}
            </CardBody>
            <CardBody>
-             <h4>Messages: </h4>
+             {comment.map((c) => <Message key={c.id} message={c}/>)}
+             
            </CardBody>
          </Card>
        </Container>

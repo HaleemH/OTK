@@ -20,7 +20,6 @@ function NewTask({user, setRefreshList}) {
       due_by: date,
       city,
       user_id: user.id,
-      vendor_id: 1,
     };
     fetch("/tasks", {
       method: "POST",

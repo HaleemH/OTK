@@ -25,10 +25,9 @@ function TaskList({ desc, due, user, id, city, currentUser,setRefreshList }) {
   // Send Message
   function handleSubmit() {
     let data = {
-      user_id: user.id,
+      user_id: currentUser.id,
       comment: message,
       task_id: id,
-      vendor_id: 1,
     };
     fetch("/task_comments", {
       method: "POST",
@@ -81,7 +80,7 @@ function TaskList({ desc, due, user, id, city, currentUser,setRefreshList }) {
     setEdit(false)
     setRefreshList(Date.now());
   }
-
+console.log(currentUser)
   return (
     <div className="task__container">
       {/* Edit post */}
@@ -164,6 +163,7 @@ function TaskList({ desc, due, user, id, city, currentUser,setRefreshList }) {
                 name="Desc"
                 type="textarea"
               />
+              <i className="message__disclaimer">Contact information will be attached to your message.</i>
             </FormGroup>
             <Button onClick={handleSubmit}>Send</Button>
           </Form>

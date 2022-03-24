@@ -147,6 +147,7 @@ function LoginCard({setUser}) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </FormGroup>
+          <Button onClick={() => setView(!view)} className="login__button">Sign In</Button>
           <Button onClick={signUp} className="login__button">
             Sign Up
           </Button>

@@ -65,12 +65,12 @@ Vendor.create(
 )
 
 Vendor.create(
-  name: 'A, Danae Johnson',
+  name: 'Love Body Scents',
   address: '',
   website: 'LoveBodyScents.com',
   social:'@LoveBodyScents' ,
   menu: '',
-  services: '',
+  services: 'Providing quality body scents.',
   phone: '',
   rating: 0,
   email: 'customerservice@lovebodyscents.com',

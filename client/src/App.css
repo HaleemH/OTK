@@ -100,8 +100,9 @@
 /* Main Card  */
 .vendor__card{
   margin: 10px;
- max-width: 30%;
+  max-width: 30%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
 }
 .card__container {
   width: 100%;
@@ -240,10 +241,16 @@
 
 .task__comment_container{
   width: 40vh;
+  margin-bottom: 20px;
 }
 .task__container{
   justify-content: center;
   align-items: center;
+}
+
+.message__disclaimer{
+  color:red;
+  font-size: .7rem;
 }
 
 /* Profile Page*/
@@ -264,6 +271,13 @@
   width:70vh;
 }
 
+.profile__message{
+  margin:10px;
+  padding:5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
 /* Company Page */ 
 .company__hero{
   margin-bottom: 10vh;
@@ -279,5 +293,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }

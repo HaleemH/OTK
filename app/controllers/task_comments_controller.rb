@@ -10,7 +10,8 @@ class TaskCommentsController < ApplicationController
 
   # GET /task_comments/1
   def show
-    render json: @task_comment
+    task= TaskComment.where(task_id: params[:id])
+    render json: task, status: :ok
   end
 
   # POST /task_comments
@@ -42,6 +43,6 @@ class TaskCommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_comment_params
-      params.require(:task_comment).permit(:comment, :user_id, :task_id, :vend)
+      params.permit(:comment, :user_id, :task_id)
     end
 end
