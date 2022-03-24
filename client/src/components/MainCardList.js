@@ -1,6 +1,7 @@
 import React from "react";
 import MainCard from "./MainCard";
 function MainCardList({ vendors, setVendorId }) {
+  console.log(vendors)
   return (
     <div className="card__container">
       {vendors.map((vendor) => {

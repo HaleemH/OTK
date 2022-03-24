@@ -12,15 +12,16 @@ import officepic from "../assets/officepic.jpg";
 
 function MainCard({ id, name, address, rating, img, setVendorId }) {
   return (
-    <Card color="light" className="vendor__card" >
+    <Card color="light" className="vendor__card">
       <CardBody>
         <CardTitle tag="h5">{name}</CardTitle>
-        <CardImg alt="city pic" src={img ? img : officepic} width="100%" />
-        <CardText>
-          {address}
-          <br />
-          Rating: {rating}
-        </CardText>
+        <CardImg
+          alt="city pic"
+          src={img ? img : officepic}
+          width="100%"
+          className="card__img"
+        />
+
         <Link to={`/MoreInfo/${id}`}>
           <Button onClick={() => setVendorId(id)}>Check Out</Button>
         </Link>

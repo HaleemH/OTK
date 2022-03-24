@@ -85,7 +85,7 @@ Vendor.create(
   services: 'Cleaning Service',
   phone: '',
   rating: 0,
-  email: 'breescleaningservice01@gmail.com'
+  email: 'breescleaningservice01@gmail.com',
   img: "https://socalcleaningpros.com/wp-content/uploads/2020/09/move-in-out-cleaning-services-1.jpg"
 )
 
