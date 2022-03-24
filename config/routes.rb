@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :task_comments
+  resources :task_comments, only: [ :show, :create]
   resources :users
-  resources :comments, only: [:index,:show,:create,:destroy]
+  # resources :comments, only: [:index,:show,:create,:destroy]
   resources :tasks
-  resources :vendors
+  resources :vendors, only: [ :show, :index]
 
 
   # user Login

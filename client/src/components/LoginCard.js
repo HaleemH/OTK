@@ -28,10 +28,9 @@ function LoginCard({setUser}) {
         if (res.username) {
           //if success setCurrentUser to response
           setUser(res);
-          console.log(res)
         } else {
           //if fail alert errors
-          alert(res.error);
+          alert(res.errors);
         }
       });
 
@@ -61,7 +60,7 @@ function LoginCard({setUser}) {
           console.log(res)
         } else {
           //if fail alert errors
-          alert(res.error);
+          alert(res.errors);
         }
       });
 

@@ -14,29 +14,17 @@ class VendorsController < ApplicationController
   end
 
   # POST /vendors
-  def create
-    @vendor = Vendor.new(vendor_params)
+  # def create
+  #   @vendor = Vendor.new(vendor_params)
 
-    if @vendor.save
-      render json: @vendor, status: :created, location: @vendor
-    else
-      render json: @vendor.errors, status: :unprocessable_entity
-    end
-  end
+  #   if @vendor.save
+  #     render json: @vendor, status: :created, location: @vendor
+  #   else
+  #     render json: @vendor.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  # PATCH/PUT /vendors/1
-  def update
-    if @vendor.update(vendor_params)
-      render json: @vendor
-    else
-      render json: @vendor.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /vendors/1
-  def destroy
-    @vendor.destroy
-  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
