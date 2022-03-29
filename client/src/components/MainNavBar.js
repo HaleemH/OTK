@@ -18,7 +18,6 @@ function MainNavBar({ user, setUser }) {
       method: "DELETE",
     }).then(setUser(""));
   }
-
   return (
     <div>
       <Navbar color="faded" light className="mainNav">

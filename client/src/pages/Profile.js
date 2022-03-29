@@ -10,6 +10,7 @@ import {
 
 function Profile({ user }) {
   const [task, setTask] = useState([]);
+   const [time, setTime] = useState("");
   
   useEffect(() => {
     fetch(`/profile/${user.id}`)
@@ -17,8 +18,7 @@ function Profile({ user }) {
     .then(res => {
      setTask(res)
     })
-  },[])
-console.log(task)
+  },[time])
   return (
     <>
       <div className="profile__hero"></div>
@@ -37,7 +37,7 @@ console.log(task)
         </Card>
         <h3>Open Task:</h3>
         {task.map((t) => (
-          <ProfileTask key={t.id} task={t} />
+          <ProfileTask key={t.id} task={t} setTime={setTime} time={time}/>
         ))}
       </Container>
     </>
