@@ -21,11 +21,15 @@ function MainNavBar({ user, setUser }) {
   return (
     <div>
       <Navbar color="faded" light className="mainNav">
-        <NavbarBrand className="me-auto" href="/Main">
+        <NavbarBrand className="me-auto" href="/">
           Plugged N
         </NavbarBrand>
         {user ? (
-          <div className="nav__username">{user.username}</div>
+          <div className="nav__username">
+            <b>
+             Welcome, {user.username}
+            </b>
+          </div>
         ) : (
           <div className="nav__username"></div>
         )}
@@ -34,7 +38,7 @@ function MainNavBar({ user, setUser }) {
           {navShow ? (
             <Nav navbar>
               <NavItem onClick={() => setNavShow(!navShow)}>
-                <Link to="/Main">Home</Link>
+                <Link to="/">Home</Link>
               </NavItem>
               <NavItem onClick={() => setNavShow(!navShow)}>
                 <Link to="/TaskBoard">Task Board</Link>

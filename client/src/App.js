@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //Pages
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Main from "./pages/Main";
+// import Main from "./pages/Main";
 import CompanyPage from "./pages/CompanyPage";
 import TaskBoard from "./pages/TaskBoard";
 import Profile from "./pages/Profile";
@@ -24,6 +24,18 @@ function App() {
   useEffect(() => {
     localStorage.setItem("user-data", JSON.stringify(user));
   });
+  useEffect(() => {
+    const vendor = localStorage.getItem("vendor-data");
+    if (vendor) {
+      setVendorId(JSON.parse(vendor));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("vendor-data", JSON.stringify(vendorId));
+  });
+
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -31,21 +43,24 @@ function App() {
           <MainNavBar user={user} setUser={setUser} />
           <div>
             <Routes>
-              <Route path="/TaskBoard" element={<TaskBoard user={user}/>} />
+              <Route path="/TaskBoard" element={<TaskBoard user={user} />} />
               <Route path="/Profile" element={<Profile user={user} />} />
               <Route
                 path="/Login"
                 element={<Login setUser={setUser} user={user} />}
               />
-              <Route
+              {/* <Route
                 path="/Main"
                 element={<Main user={user} setVendorId={setVendorId} />}
-              />
+              /> */}
               <Route
-                path={`/MoreInfo/${vendorId}`} 
+                path={`/MoreInfo/${vendorId}`}
                 element={<CompanyPage vendorId={vendorId} />}
               />
-              <Route path="/" element={<Home />} />
+              <Route
+                path="/"
+                element={<Home user={user} setVendorId={setVendorId} />}
+              />
             </Routes>
           </div>
         </div>

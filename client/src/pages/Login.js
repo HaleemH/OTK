@@ -7,7 +7,7 @@ function Login({user, setUser}) {
   return (
     <div>
     {user ? (
-      <Navigate to="/Main" />
+      <Navigate to="/" />
     ):(
     <LoginCard setUser={setUser} />)
     }

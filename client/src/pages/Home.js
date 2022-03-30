@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
-import { Container, Button } from "reactstrap";
+import Zoom from "react-reveal/Zoom";
+import MainCardList from "../components/MainCardList";
+import { Container } from "reactstrap";
 
-function Home() {
-  const [showButton, setShowButton] = useState(false);
-  const [navMain, setNavMain] = useState(false)
+function Home({ setVendorId }) {
+  const [vendors, setVendors] = useState([]);
+
+  // -----
+
   useEffect(() => {
-    setTimeout(() => {
-      setShowButton(true);
-    }, 500);
+    fetch("/vendors")
+      .then((r) => r.json())
+      .then((res) => setVendors(res));
   }, []);
-  
+
   return (
-    <Container className="home__jumbo">
-      <div className="jumbo-txt">
-        <h2>Connecting Small Businesses and Customers</h2>
-      </div>
+    <div className="top_level">
+      <Container className="home__jumbo"></Container>
 
-      {showButton ? (
-        <Button onClick={() => setNavMain(true)} className="jumbo__button">
-          Get Plugged
-        </Button>
-      ) : null}
-
-      {navMain ? <Navigate to="/Main" /> : null}
-    </Container>
+      {/*  */}
+      {/* <div className="main__hero"></div> */}
+      <p className="greeting">
+        Welcome to Plugged🔌N, Find a local business, or Check out our{" "}
+        <a href="/TaskBoard" className="link-task">
+          <Zoom right>TaskBoard</Zoom>
+        </a>
+      </p>
+      <Container className="main__container">
+        <MainCardList vendors={vendors} setVendorId={setVendorId} />
+      </Container>
+    </div>
   );
 }
 

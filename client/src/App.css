@@ -1,41 +1,52 @@
 .App {
   text-align: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
 }
 /* Main Nav Comp */
 .nav__username {
   margin-right: 20px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .mainNav a {
   color: black;
   text-decoration: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /* Home page */
+.greeting {
+  margin: 30px;
+  font-size: 3rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.link-task {
+  text-decoration: none;
+  color: black;
+
+}
 
 .home__jumbo {
   min-width: 100%;
   min-height: 100vh;
   background-image: url("./assets/homej.jpg");
-  object-fit: center;
+  background-position: 10% 30%;
   background-size: cover;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .jumbo-txt {
-  position: absolute;
+  position: relative;
   padding: 0;
   margin: 0;
   max-width: 100%;
   max-height: 100vh;
   color: white;
-  top: 25%;
+  top: 60%;
   animation: fadeIn linear 7s;
   -webkit-animation: fadeIn linear 7s;
   -moz-animation: fadeIn linear 7s;
@@ -88,7 +99,7 @@
   }
 }
 
-.jumbo__button {
+/* .jumbo__button {
   position: absolute;
   top: 35%;
   animation: fadeIn linear 7s;
@@ -96,16 +107,27 @@
   -moz-animation: fadeIn linear 7s;
   -o-animation: fadeIn linear 7s;
   -ms-animation: fadeIn linear 7s;
-}
+} */
 /* Main Card  */
-.vendor__card{
+.vendor__card {
   margin: 10px;
-  max-width: 30%;
+  min-width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  overflow: hidden;
+}
+.vendor__card:hover {
+  box-shadow: none;
+}
+
+.main__card__button {
+  margin-bottom: 10px;
+  transition: background-color 0.5s;
+}
+.main__card__button:hover {
+  background-color: white;
+  color: black;
 }
 .card__container {
-  width: 100%;
+  max-width: 70%;
   height: 100%;
   text-align: center;
   margin: 40px;
@@ -113,9 +135,9 @@
   flex-wrap: wrap;
 }
 
-.card__img{
+.card__img {
   width: 300px;
-  height:200px;
+  height: 200px;
   margin-bottom: 10px;
 }
 /* Main page */
@@ -126,6 +148,7 @@
   flex-direction: row;
   justify-content: center;
 }
+
 .main__cards {
   min-width: 100%;
   min-height: 100vh;
@@ -228,6 +251,7 @@
   width: 60vh;
   margin-top: 40px;
   background-color: rgba(182, 182, 182, 0.098);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .task__action {
@@ -239,24 +263,24 @@
   margin-bottom: 10px;
 }
 
-.task__comment_container{
+.task__comment_container {
   width: 40vh;
   margin-bottom: 20px;
 }
-.task__container{
+.task__container {
   justify-content: center;
   align-items: center;
 }
 
-.message__disclaimer{
-  color:red;
-  font-size: .7rem;
+.message__disclaimer {
+  color: red;
+  font-size: 0.7rem;
 }
 
 /* Profile Page*/
 
-.profile__hero{
-   margin-bottom: 10vh;
+.profile__hero {
+  margin-bottom: 10vh;
   width: 100%;
   min-height: 50vh;
   background-image: url("./assets/victor-iaquA2snPbk-unsplash.jpg");
@@ -264,50 +288,59 @@
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(198, 198, 198, 0.16);
 }
-.profile__card{
+.profile__card {
   margin: none;
   justify-content: center;
   align-items: center;
-  width:70vh;
+  width: 70vh;
 }
 
-.profile__message{
-  margin:10px;
-  padding:5px;
+.profile__message {
+  margin: 10px;
+  padding: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgba(131, 144, 159, 0.406);
-
 }
 
-.profile__task__card{
+.profile__task__card {
   margin: 10px;
 }
 
-.profile__button{
+.profile__button {
   background-color: rgba(255, 0, 0, 0.365);
-  margin:1vh;
+  margin: 1vh;
   max-width: 3vh;
   max-height: 5vh;
   border-radius: 50%;
-  padding:0%;
+  padding: 0%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+}
+.edit__button {
+  position: absolute;
+  right: 2vh;
+  margin: 1vh;
+  max-width: fit-content;
+  max-height: fit-content;
+  padding: 0.2rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* Company Page */ 
-.company__hero{
-  margin-bottom: 10vh;
+/* Company Page */
+.company__hero {
+  margin-bottom: 40px;
   width: 100%;
   min-height: 50vh;
-  background-image: url("./assets/tim-mossholder-qvWnGmoTbik-unsplash.jpg");
+  background-image: url("./assets/linkedin-sales-solutions--AXDunSs-n4-unsplash.jpg");
   background-position: center;
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(198, 198, 198, 0.16);
   z-index: 100;
 }
 
-.company__container{
+.company__container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Zoom from "react-reveal/Zoom";
 import Menu from "../components/Menu";
 
 function CompanyPage({ vendorId }) {
@@ -18,53 +19,83 @@ function CompanyPage({ vendorId }) {
       });
   }, []);
 
+  
+
   function handleMenu() {
     let menu = vendor.menu;
     setMenuItems(menu.split(","));
     setShowMenu(!showMenu);
   }
-
+  console.log(vendorId);
   return (
     <>
-      <div className="company__hero"></div>
-      <div className="company__container">
+      {vendorId ? (
         <div>
-          <h2>{vendor.name}</h2>
-          <img src={vendor.img} />
-          <br />
-          Address: {vendor.address}
-          <br />
-          Website:{" "}
-          <a href={`https://www.${vendor.website}`}>{vendor.website}</a>
-          <br />
-          Instagram: {vendor.social}
-          {/* Menu: {vendor.menu} */}
-          {/* Services: {vendor.services} */}
-          <br />
-          Phone: {vendor.phone}
-          <br />
-          {vendor.menu ? (
-            <button onClick={handleMenu} className="company_button">
-              Menu
-            </button>
-          ) : (
-            <button
-              onClick={() => setShowServices(!showServices)}
-              className="company_button"
-            >
-              Services
-            </button>
-          )}
+          <div className="company__hero"></div>
+          <div className="company__container">
+            <Zoom>
+              <div>
+                <h2>{vendor.name}</h2>
+                <img src={vendor.img} />
+                <br />
+                {vendor.services ? (
+                  <span>
+                    Providing: {vendor.services}
+                    <br />
+                  </span>
+                ) : null}
+
+                {vendor.address ? (
+                  <span>
+                    Address: {vendor.address}
+                    <br />
+                  </span>
+                ) : null}
+
+                {vendor.website ? (
+                  <span>
+                    Website:{" "}
+                    <a href={`https://www.${vendor.website}`}>
+                      {vendor.website}
+                    </a>
+                    <br />
+                  </span>
+                ) : null}
+
+                {vendor.social ? (
+                  <span>
+                    Instagram: {vendor.social} <br />
+                  </span>
+                ) : null}
+
+                {vendor.phone ? (
+                  <span>
+                    Phone: {vendor.phone} <br />
+                  </span>
+                ) : null}
+
+                {vendor.menu ? (
+                  <button onClick={handleMenu} className="company_button">
+                    Menu
+                  </button>
+                ) : null}
+              </div>
+            </Zoom>
+            <ul>
+              {showMenu ? (
+                <div>
+                  <h3>Menu</h3>
+                  {menuItems.map((item) => (
+                    <Menu item={item} />
+                  ))}
+                </div>
+              ) : null}
+            </ul>
+          </div>
         </div>
-        <ul>
-          {showMenu ? (
-            <div>
-              <h3>Menu</h3>
-              {menuItems.map((item) => <Menu item={item} />)}
-            </div>
-          ) : null}
-        </ul>
-      </div>
+      ) : (
+        setShowServices(vendorId)
+      )}
     </>
   );
 }

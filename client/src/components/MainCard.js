@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import {
   CardImg,
   Card,
@@ -12,7 +13,7 @@ import officepic from "../assets/officepic.jpg";
 
 function MainCard({ id, name, address, rating, img, setVendorId }) {
   return (
-    <Card color="light" className="vendor__card">
+    <Card color="light">
       <CardBody>
         <CardTitle tag="h5">{name}</CardTitle>
         <CardImg
@@ -21,11 +22,12 @@ function MainCard({ id, name, address, rating, img, setVendorId }) {
           width="100%"
           className="card__img"
         />
-
-        <Link to={`/MoreInfo/${id}`}>
-          <Button onClick={() => setVendorId(id)}>Check Out</Button>
-        </Link>
       </CardBody>
+      <Link to={`/MoreInfo/${id}`}>
+        <Button onClick={() => setVendorId(id)} className="main__card__button">
+          Check Out
+        </Button>
+      </Link>
     </Card>
   );
 }

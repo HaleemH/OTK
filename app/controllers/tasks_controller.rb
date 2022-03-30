@@ -34,4 +34,5 @@ class TasksController < ApplicationController
   def task_params
     params.permit(:description, :due_by, :city, :user_id)
   end
+
 end
