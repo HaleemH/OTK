@@ -14,19 +14,6 @@ function Profile({ user }) {
       });
   }, []);
 
-  
-
-  // useEffect(() => {
-  //   const tasks = localStorage.getItem("tasks-data");
-  //   if (tasks) {
-  //     setTask(JSON.parse(tasks));
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("tasks-data", JSON.stringify(task));
-  // });
-
   return (
     <>
       <div className="profile__hero"></div>
