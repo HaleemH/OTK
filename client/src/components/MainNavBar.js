@@ -54,7 +54,7 @@ function MainNavBar({ user, setUser }) {
               )}
               {user ? (
                 <NavItem onClick={() => setNavShow(!navShow)}>
-                  <Button onClick={handleLogout}>Log Out</Button>
+                  <Link onClick={handleLogout} to="/Login">Log Out</Link>
                 </NavItem>
               ) : null}
             </Nav>

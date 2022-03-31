@@ -13,82 +13,89 @@ Task.destroy_all
 
 # test users
 
-User.create(
-  username: 'test',
-  password_digest: 'test',
-  email: 'test@g.com',
-  first_name: 'John',
-  last_name: 'Doe',
-)
-
-
 # Vendors
-Vendor.create(
-  name: 'Open Task',
-  address: '',
-  website: '',
-  menu: '',
-  services: '',
-  phone: '',
-  rating: 0,
-)
-Vendor.create(
-  name: 'Prolific Tech',
-  address: '123 Crenshaw BLVD, 90250 CA',
-  website: 'haleemh.dev',
-  menu: '',
-  services: 'Web Development',
-  phone: '1234567890',
-  rating: 0,
-)
-Vendor.create(
-  name: 'test business',
-  address: '2223 Crenshaw BLVD, 90250 CA',
-  website: 'test.dev',
-  menu: '',
-  services: 'land scaping',
-  phone: '1234567890',
-  rating: 0,
-)
 
 Vendor.create(
   name: 'WizKid Lemonade',
   address: 'Local pop ups/ BACHIBUS',
   website: '',
-  social: "@Wizkid_lemonade",
-  menu: 'Lemonade, Strawberry Lemonade, Tropical Lemonade, Green Apple Lemonade, Peach Lemonade, Kiwi Lemonade *TBA*, Watermelon Lemonade *TBA*, Berry Lemonade',
-  services: 'Drinks',
+  social: '@Wizkid_lemonade',
+  menu:
+    'Lemonade, Strawberry Lemonade, Tropical Lemonade, Green Apple Lemonade, Peach Lemonade, Kiwi Lemonade *TBA*, Watermelon Lemonade *TBA*, Berry Lemonade',
+  services: '',
   phone: '323.530.8342',
   rating: 0,
   email: 'Icwright@gmail.com',
-  img: "https://www.lemontreedwelling.com/wp-content/uploads/2020/05/strawberry-lemonade-featured-720x720.jpg",
+  img:
+    'https://www.lemontreedwelling.com/wp-content/uploads/2020/05/strawberry-lemonade-featured-720x720.jpg',
 )
 
 Vendor.create(
   name: 'Love Body Scents',
   address: '',
   website: 'LoveBodyScents.com',
-  social:'@LoveBodyScents' ,
+  social: '@LoveBodyScents',
   menu: '',
   services: 'Providing quality body scents.',
   phone: '',
   rating: 0,
   email: 'customerservice@lovebodyscents.com',
-  img: "https://www.ambius.com/blog/wp-content/uploads/2019/05/biophilic-scents.jpg",
+  img:
+    'https://www.ambius.com/blog/wp-content/uploads/2019/05/biophilic-scents.jpg',
 )
 Vendor.create(
   name: "Bree's Cleaning Service ",
   address: '',
   website: '',
-  social:'@breescleaningservice',
+  social: '@breescleaningservice',
   menu: '',
   services: 'Cleaning Service',
   phone: '',
   rating: 0,
   email: 'breescleaningservice01@gmail.com',
-  img: "https://socalcleaningpros.com/wp-content/uploads/2020/09/move-in-out-cleaning-services-1.jpg"
+  img:
+    'https://socalcleaningpros.com/wp-content/uploads/2020/09/move-in-out-cleaning-services-1.jpg',
+)
+Vendor.create(
+  name: 'MSI Production LLC',
+  address: '',
+  website: '',
+  social: '@loveiizgod',
+  menu: '',
+  services: 'Film / Photography',
+  phone: '',
+  rating: 0,
+  email: '',
+  img:
+    'https://i1.adis.ws/i/canon/eos_m50-lifestyle-mohamed-abdulle-19_02eb9ceca5c541f08cfc21e76ddc143c?$media-collection-half-dt-jpg$',
+)
+
+Vendor.create(
+  name: 'Shop LB|LA',
+  address: '',
+  website: 'https://shoplbla.com',
+  social: '@shop.lbla',
+  menu: '',
+  services: "Women's Clothing Store",
+  phone: '',
+  rating: 0,
+  email: '',
+  img:
+    'https://cdn.shopify.com/s/files/1/0083/8883/7481/files/IMG_2068_100x@2x.png?v=1641704118',
+)
+
+Vendor.create(
+  name: 'Blaxsons',
+  address: '',
+  website: 'https://www.blaxsons.com',
+  social: '@shopblaxsons_',
+  menu: '',
+  services: "Online Store",
+  phone: '',
+  rating: 0,
+  email: '',
+  img:
+    'https://static.wixstatic.com/media/70059b_b6bd4c2e0f2c4529a1dd87f8647a450e~mv2.jpg/v1/fill/w_308,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Gift%20Card%20.jpg',
 )
 
 # Comments
-
-

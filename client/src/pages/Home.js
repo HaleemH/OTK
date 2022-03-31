@@ -21,7 +21,7 @@ function Home({ setVendorId }) {
       {/*  */}
       {/* <div className="main__hero"></div> */}
       <p className="greeting">
-        Welcome to Plugged🔌N, Find a local business, or Check out our{" "}
+        Welcome to Plugged🔌N. Find a local business, or Check out our{" "}
         <a href="/TaskBoard" className="link-task">
           <Zoom right>TaskBoard</Zoom>
         </a>

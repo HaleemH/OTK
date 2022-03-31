@@ -39,10 +39,10 @@ function CompanyPage({ vendorId }) {
                 <img src={vendor.img} />
                 <br />
                 {vendor.services ? (
-                  <span>
-                    Providing: {vendor.services}
+                  <div>
+                     {vendor.services}
                     <br />
-                  </span>
+                 </div>
                 ) : null}
 
                 {vendor.address ? (

@@ -12,7 +12,7 @@ function Profile({ user }) {
       .then((res) => {
         setTask(res);
       });
-  }, []);
+  }, [time]);
 
   return (
     <>

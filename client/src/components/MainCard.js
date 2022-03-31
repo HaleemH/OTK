@@ -15,7 +15,7 @@ function MainCard({ id, name, address, rating, img, setVendorId }) {
   return (
     <Card color="light">
       <CardBody>
-        <CardTitle tag="h5">{name}</CardTitle>
+        <CardTitle tag="h2">{name}</CardTitle>
         <CardImg
           alt="city pic"
           src={img ? img : officepic}
