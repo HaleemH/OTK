@@ -10,12 +10,9 @@
 
   <h3 align="center">Plugged-N</h3>
 
-  <p align="center">
-   
-    <br />
     <a href="https://www.youtube.com/watch?v=fQD32yfXlPI">View Demo</a>
  
-  </p>
+ 
 </div>
 
 
