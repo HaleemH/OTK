@@ -43,7 +43,7 @@
 ## About The Project
 
 <div align="center">
-<h3>Plugged N is an app promoting local small businesses while providing a space to bid on odd jobs locally.</h3>
+<h3>Plugged N is an app promoting local small businesses while providing a space for users to find or post a task.</h3>
 </div>
 
 
