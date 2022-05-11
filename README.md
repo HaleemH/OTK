@@ -49,8 +49,8 @@
 
 Functions:
 * Local small businesses and entreprenuers have a place to promote their services / goods.
-* Locals who need odd jobs completed can post task on our taskboard.
-* Users can submit inquire on task they see on the task board.
+* Users can post tasks on our taskboard.
+* Users can inquire on task they see on the task board.
 
 
 
