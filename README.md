@@ -34,12 +34,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -48,12 +43,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://haleem-portfolio.herokuapp.com/static/media/Pluggedn.70caefd5f2226f40270a.png)
+<div align="center">
+<h3>Plugged N is an app promoting local small businesses while providing a space to bid on odd jobs locally.</h3>
+</div>
 
-
-Plugged N is an app promoting local small businesses while providing a space to bid on odd jobs locally.
-    
-    <br />
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
